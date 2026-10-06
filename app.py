@@ -26,7 +26,7 @@ st.caption("Predicts next-day closing price for Indian IT sector stocks using a 
 # ---------------- Load Model & Scaler ----------------
 @st.cache_resource
 def load_assets():
-    model = load_model("it_stock_multivariate_lstm.h5")
+    model = load_model("it_stock_multivariate_lstm.h5", compile=False)
     scaler = joblib.load("multi_scaler.pkl")
     features = joblib.load("feature_list.pkl")
     return model, scaler, features
